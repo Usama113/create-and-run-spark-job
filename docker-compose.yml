@@ -14,7 +14,7 @@ version: '3'
 services:
   master:
     build: .
-    image: pavanpkulkarni/spark_image:2.2.1
+    image: spark:test
     container_name: master
     ports:
       - 4040:4040
@@ -27,7 +27,7 @@ services:
 # SLAVE CONFIGURATION 
 #---------------------------------------
   slave:
-    image: pavanpkulkarni/spark_image:2.2.1
+    image: spark:test
     depends_on:
       - master
     ports:
@@ -41,7 +41,7 @@ services:
 # HISTORY SERVER CONFIGURATION 
 #---------------------------------------
   history-server:
-      image: pavanpkulkarni/spark_image:2.2.1
+      image: spark:test
       container_name: history-server
       depends_on:
         - master
